@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DolphinVPN</title>
+    <link rel="icon" type="image/png" href="dolphin.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            padding: 20px 250px 90px 250px;
+            font-family: system-ui;
+        }
+
+        p {
+            color: rgb(63, 65, 67);
+        }
+
+        .highlight {
+            color: orange;
+        }
+
+        .flex-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 0px 1px 10px 0px;
+            width: 100%;
+            gap: 30px;
+        }
+
+        .flex-header>nav-item {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            flex-grow: 0;
+        }
+
+        .flex-header>.spacer {
+            flex-grow: 1;
+        }
+
+        .image-text {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .image-text img {
+            margin-right: 10px;
+            width: 40px;
+            height: auto;
+        }
+
+        .text-button {
+            background: none;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .text-button::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .text-button:hover::after {
+            width: 100%;
+        }
+
+        .rounded-button {
+            background: none;
+            border: 2px solid orange;
+            border-radius: 30px;
+            color: orange;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .rounded-button:hover {
+            background-color: none;
+            color: olivedrab;
+        }
+
+
+        .flex-body {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+        }
+
+        .flex-body>div {
+            background-color: white;
+            margin: 0;
+            padding: 30px 0px 60px 0px;
+            text-align: left;
+            flex-grow: 0;
+        }
+
+        .flex-body .image {
+            margin-top: 20px;
+        }
+
+        .flex-body .image img {
+            width: 530px;
+            height: auto;
+        }
+
+        .flex-body .content h1 {
+            font-size: 40px;
+            margin-top: 60px;
+        }
+
+        .flex-body .content p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-left: 10px;
+            margin-bottom: 50px;
+        }
+
+        .flex-body .content a {
+            margin-left: 10px;
+        }
+
+        .shadow-button {
+            background-color: orange;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 12px 60px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .shadow-button:hover {
+            background-color: olivedrab;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .columns-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5px;
+            padding: 20px 0;
+            border-radius: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: orange;
+            position: relative;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            background-color: orange;
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        .columns-container::before,
+        .columns-container::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: rgb(63, 65, 67);
+            ;
+        }
+
+        .columns-container::before {
+            left: 33.33%;
+        }
+
+        .columns-container::after {
+            left: 66.66%;
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 35px;
+        }
+
+        .icon i {
+            font-size: 35px;
+        }
+
+        .text p {
+            margin: 5px 0;
+        }
+
+        .text p:first-child {
+            font-size: 18px;
+            color: black;
+        }
+
+        .text p:nth-child(2) {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+
+        <div class="flex-header">
+            <div class="nav-item">
+                <div class="image-text">
+                    <img src="dolphin.png" alt="dolphin">
+                    <span><strong>Dolphin</strong><span class="highlight"><strong>VPN</strong></span></span>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button">About</button></a>
+            </div>
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button">Features</button></a>
+            </div>
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button">Pricing</button></a>
+            </div>
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button">Testimonials</button></a>
+            </div>
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button">Help</button></a>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="nav-item">
+                <a href="./index.html"><button class="text-button"><strong>Sign In</strong></button></a>
+            </div>
+            <div class="nav-item">
+                <a href="./index.html" class="rounded-button"><strong>Sign Up</strong></a>
+            </div>
+        </div>
+
+        <div class="flex-body">
+            <div class="content">
+                <h1>Want anything to be easy with <span class="highlight"><strong>DolphinVPN.</strong></span></h1>
+                <p>Provide a network for all your needs with ease and fun using Dolphin<strong>VPN</strong> discover
+                    interesting features from us.</p>
+                <a href="./index.html" class="shadow-button"><strong>Get Started</strong></a>
+            </div>
+            <div class="image">
+                <img src="picture.jpg" alt="girl with devices">
+            </div>
+        </div>
+
+        <div class="columns-container">
+            <div class="column">
+                <div class="icon-text">
+                    <div class="icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="text">
+                        <p><strong>90+</strong></p>
+                        <p>Users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="icon-text">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="text">
+                        <p><strong>30+</strong></p>
+                        <p>Locations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="icon-text">
+                    <div class="icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="text">
+                        <p><strong>50+</strong></p>
+                        <p>Servers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
